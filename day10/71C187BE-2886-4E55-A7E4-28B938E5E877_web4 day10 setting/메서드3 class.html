@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      margin: 20px;
+      margin-bottom: 50px;
+      background-color: #ddd;
+      border: 3px solid #000;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .box.active {
+      background-color: #333;
+      border-color: gold;
+      color: #fff;
+    }
+
+    /* pseudo class */
+  </style>
+</head>
+<!-- 
+  ㅇ 메서드 (Method)
+
+    "무엇을"
+    "어떻게 할래?" : 메서드(method), 동사, 명령어 <---
+
+    1. CSS 관련
+      1) css();
+      2) width() / height();    
+
+    2. 속성, 값 관련
+      1) attr();
+      2) val();
+
+    3. Class 관련    <----------
+      1)addclass
+      2)removeclass
+      3)toggleClass
+
+      4)
+      
+    4. 애니메이션 관련
+
+    5. Scroll 관련
+
+    6. 텍스트, 구조 관련 (day04 dom)
+    
+ -->
+<body>
+  <h1>addClass : class를 추가</h1>
+  <div class="box box1">addClass</div>
+
+  <h1>removeClass : class를 제거</h1>
+  <div class="box box2 active">removeClass</div>
+
+  <h1>toggleClass : class를 추가/제거</h1>
+  <div class="box box3">toggleClass</div>
+
+  <h1>hasClass : class의 유무를 확인</h1>
+  <div class="box box4">hasClass</div>
+
+  <script src="../../day03/js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* coding start! */
+     $(".box1").click(function () {
+      $(this).addClass("active");
+     })
+     $(".box2").click(function () {
+      $(this).removeClass("active");
+     })
+     $(".box3").click(function () {
+      $(this).toggleClass("active");
+     })
+
+    })
+
+  </script>
+</body>
+
+</html>

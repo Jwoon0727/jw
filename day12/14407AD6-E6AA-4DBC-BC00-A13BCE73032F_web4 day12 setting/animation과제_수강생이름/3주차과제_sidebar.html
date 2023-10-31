@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3주차 과제2 - sidebar</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    html,
+    body {
+      height: 100%;
+      /* .box의 height 100% 위함  */
+    }
+
+    .menu {
+      width: 100px;
+      height: 100px;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: gray;
+      text-align: center;
+      line-height: 100px;
+      transition: all 0.5s;
+    }
+
+    .box {
+      width: 400px;
+      height: 100%;
+      background-color: #000;
+      /* margin-left: -400px; */
+      margin-left: 0px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .close {
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 2%;
+      right: 5%;
+    }
+
+    .box_list {
+      width: 300px;
+      height: 400px;
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      font-size: 50px;
+    }
+
+    .box_list li {
+      margin: 30px;
+    }
+
+    .box_list a {
+      transition: all 0.4s;
+    }
+
+    .box_list li a:hover {
+      color: #fff;
+    }
+
+    /* 가상 클래스 active */
+    .menu a.active {
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <a href="#">MENU</a>
+  </div>
+
+  <div class="box">
+    <button class="close">닫기</button>
+
+    <ul class="box_list">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">News</a></li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    /* Setting */
+    // 1. .box를 margin-left: -400으로 설정
+    // 2. .box가 margin-left: 0이 되면 원위치인 것을 인지
+
+    /* Q1) */
+    // MENU 영역을 클릭하면, acitve class를 추가
+    // MENU 영역을 클릭하면, 0.5초동안 box의 margin-left를 0으로 변경
+
+    /* Q2) */
+    // 닫기 버튼을 클릭하면, menu에 active class을 제거
+    // 닫기 버튼을 클릭하면, 0.5초동안 box의 margin-left를 -400으로 변경
+
+    /* Q3) */
+    // box에서 마우스가 빠져나가면,
+    // box의 margin-left를 -400으로 0.5초동안 변경
+
+    /* 
+      p.s) 선택자(타겟)에 주의하며,
+           문제 그대로를 함수식으로 적용해보세요
+
+           완성한 이후에는,
+           포트폴리오에서 사용한다고 생각하며
+           자신만의 html, css, jQuery로 구현해봅시다.
+           (과제 제출이랑은 별개)
+    */
+
+    $(document).ready(function () {
+      /* coding start! */
+
+    })
+
+  </script>
+</body>
+
+</html>

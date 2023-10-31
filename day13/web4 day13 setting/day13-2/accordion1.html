@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아코디언1</title>
+  <style>
+    /* 
+      ㅇ drop-menu tip
+      1. .lnb 배치
+      2. li 철저히 무시 (a태그가 주인공)
+      3. 대메뉴부터 css (.lnb > li > a)
+      4. .sub a 동시에 처리
+    */
+  </style>
+</head>
+
+<body>
+
+  <h1>Accordion1</h1>
+
+  <ul class="lnb">
+    <li>
+      <a href="#">브랜드스토리</a>
+      <ul class="sub">
+        <li><a href="#">청정원</a></li>
+        <li><a href="#">안주야</a></li>
+        <li><a href="#">휘슬링쿡</a></li>
+        <li><a href="#">츄엔</a></li>
+      </ul>
+    </li>
+    <!-- MENU1 end -->
+    <li>
+      <a href="#">푸드캐스트</a>
+      <ul class="sub">
+        <li><a href="#">청정원</a></li>
+        <li><a href="#">안주야</a></li>
+        <li><a href="#">휘슬링쿡</a></li>
+        <li><a href="#">츄엔</a></li>
+      </ul>
+    </li>
+    <!-- MENU2 end -->
+    <li>
+      <a href="#">푸드노하우</a>
+      <ul class="sub">
+        <li><a href="#">청정원</a></li>
+        <li><a href="#">안주야</a></li>
+        <li><a href="#">휘슬링쿡</a></li>
+        <li><a href="#">츄엔</a></li>
+      </ul>
+    </li>
+    <!-- MENU3 end -->
+    <li>
+      <a href="#">청정원SNS</a>
+      <ul class="sub">
+        <li><a href="#">청정원</a></li>
+        <li><a href="#">안주야</a></li>
+        <li><a href="#">휘슬링쿡</a></li>
+        <li><a href="#">츄엔</a></li>
+      </ul>
+    </li>
+    <!-- MENU4 end -->
+
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // 1. '브랜드스토리'의 하위메뉴(sub)만 보이고,
+      //     나머지는 숨김 처리
+
+      // 2. 대메뉴 a를 클릭하면,
+      //    다른 모든 하위메뉴(sub)는 slideUp (청소),
+      //    해당하는 하위메뉴(sub)만 slideDown   
+
+    })
+
+  </script>
+
+</body>
+
+</html>

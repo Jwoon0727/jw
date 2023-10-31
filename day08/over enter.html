@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>over enter</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .box {
+      background: beige;
+      padding: 10px;
+      margin: 50px
+    }
+
+    .over>a,
+    .enter>a {
+      background: burlywood;
+      color: #fff;
+    }
+
+    .sub1,
+    .sub2 {
+      background: beige;
+      list-style: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .sub1 a,
+    .sub2 a {
+      display: block;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box enter">
+    <a href="#">mouseenter/mouseleave</a>
+    <ul class="sub2">
+      <li><a href="#">list1</a></li>
+      <li><a href="#">list2</a></li>
+      <li><a href="#">list3</a></li>
+      <li><a href="#">list4</a></li>
+    </ul>
+  </div>
+
+  <div class="box over">
+    <a href="#">mouseover/mouseout</a>
+    <ul class="sub1">
+      <li><a href="#">list1</a></li>
+      <li><a href="#">list2</a></li>
+      <li><a href="#">list3</a></li>
+      <li><a href="#">list4</a></li>
+    </ul>
+  </div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      /* 
+        .enter에 마우스가 들어가면,
+          1) .enter의 a의 text를 변경한다.
+          2) .sub2를 미끄러져 내려오게 한다.
+
+        .enter에서 마우스가 나가면,
+          1) .enter의 a의 text를 변경한다.
+          2) .sub2를 미끄러져 올라가게 한다.          
+      */
+
+      /* mouseenter, leave */
+      $('.enter').mouseenter(function () {
+        $('.enter > a').text('mouseenter가 실행되었습니다');
+        $('.sub2').slideDown();
+      })
+
+      $('.enter').mouseleave(function () {
+        $('.enter > a').text('mouseleave가 실행되었습니다');
+        $('.sub2').slideUp();
+      })
+
+      /* ------------------------------------------------- */
+
+      /* mouseover, out */
+      $('.over').mouseover(function () {
+        $('.over > a').text('mouseover가 실행되었습니다');
+        $('.sub1').slideDown();
+      })
+
+      $('.over').mouseout(function () {
+        $('.over > a').text('mouseout이 실행되었습니다');
+        $('.sub1').slideUp();
+      })
+
+      /* 
+        ㅇ mouseover, out은
+        선택자(타겟)뿐만 아니라,
+        자식 + 후손까지 이벤트가 전파(bubbling)된다.
+        따라서 의도치 않은 결과를 가져올 수 있으므로, 
+        웹페이지를 제작할 때는 enter와 leave를 사용하는게 좋다. 
+      */
+    })
+  </script>
+</body>
+
+</html>

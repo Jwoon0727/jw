@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탭메뉴1</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* reset end */
+
+    #tab {
+      /* border: 1px solid red; */
+      width: 600px;
+      margin: 100px auto;
+      background: gray;
+      padding: 20px;
+    }
+
+    .tab_menu {
+      /* border: 1px solid blue; */
+      display: flex;
+    }
+
+    .tab_menu a {
+      display: block;
+      background: #333;
+      color: #fff;
+      width: 150px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* 가상클래스 active */
+    .tab_menu a.active {
+      background: #ddd;
+      color: #333;
+    }
+
+    .contents {
+      /* border: 1px solid blue; */
+      background: #ddd;
+      height: 500px;
+      font-size: 60px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="tab">
+
+    <ul class="tab_menu">
+      <li><a class="tab1 active" href="#">tabMenu1</a></li>
+      <li><a class="tab2" href="#">tabMenu2</a></li>
+      <li><a class="tab3" href="#">tabMenu3</a></li>
+    </ul>
+
+    <div class="contents content1">tab content1</div>
+    <div class="contents content2">tab content2</div>
+    <div class="contents content3">tab content3</div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* tab menu */
+      // 1. 모든 contents를 숨기고, content1만 보이게 처리
+      $(".contents").hide();
+      $(".content1").show();
+
+      // 2. tab1 click event
+      $(".tab1").click(function () {
+        $(".tab_menu a").removeClass("active");
+        $(this).addClass("active");
+
+        $(".contents").hide();
+        $(".content1").show();
+      })
+
+      // 2. tab2 click event
+      $(".tab2").click(function () {
+        $(".tab_menu a").removeClass("active");
+        $(this).addClass("active");
+
+        $(".contents").hide();
+        $(".content2").show();
+      })
+
+      // 2. tab3 click event
+      $(".tab3").click(function () {
+        $(".tab_menu a").removeClass("active");
+        $(this).addClass("active");
+
+        $(".contents").hide();
+        $(".content3").show();
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>

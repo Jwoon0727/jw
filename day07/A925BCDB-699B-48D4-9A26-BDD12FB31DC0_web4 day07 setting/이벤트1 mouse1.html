@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      font-size: 30px;
+      margin: 50px;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333
+    }
+
+    .target,
+    .target2 {
+      width: 200px;
+      height: 200px;
+      border: 10px inset #000;
+      padding: 10px;
+      margin: 50px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .target2 p {
+      background: orange;
+      width: 50%;
+      height: 50%;
+      transition: 1s all;
+      
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100px;
+      height: 50px;
+      margin: 0 0 50px 100px;
+    }
+
+    /* 자기자신 O */
+    /* li:hover { 
+      background: salmon;
+    } */
+
+    /* 자식 O */
+    /* li:hover a {
+      background: salmon;
+    } */
+
+    /* 남 X */
+    /* li:hover .box (X) {
+      background: salmon;
+    } */
+  </style>
+
+</head>
+<!-- 
+    ㅇ 이벤트 (Event)
+      작성한 함수식(S.V)을 바로 실행하지 않고, (대기)
+      사용자의 특정한 "행동"을 하는 사건이 발생하면 실행
+
+      언제? : 이벤트(event)**
+      
+      무엇을? : $("선택자") , 타겟 , 주어
+      어떻게 할래? : 메서드() , 명령어, 동사
+
+    1. 마우스   <-----------
+
+    2. 브라우저(window)
+
+    3. 기타
+ -->
+
+<body>
+
+  <ul class="container">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">ABOUT</a></li>
+    <li><a href="#">GALLERY</a></li>
+    <li><a href="#">NOTICE</a></li>
+  </ul>
+
+  <div class="target">content</div>
+
+  <div class="target2">
+    <p>content2</p>
+  </div>
+
+  <button class="btn">실행</button>
+
+  <script src="../A925BCDB-699B-48D4-9A26-BDD12FB31DC0_web4 day07 setting/js/jquery-3.7.1.min.js"></script>
+  <script>
+   
+    $(document).ready(function(){
+
+      /* 
+          $(this) : 
+          이벤트구문의 선택자(타겟)와
+          본론함수식의 선택자(타겟)가 같을 때
+          사용할 수 있도록 JS에서 약속한 선택자 (~한 것만)
+        */
+     /* $("li").click(function (){
+       $(this).css({background:"salmon"})
+      }) */
+
+      $("li").click(function(){
+
+
+        $(this).find('a').text("변경")
+        $(this).find('a').css({
+          fontSize: "30px",
+          backgroundColor: "salmon"
+        })
+      })
+
+
+      $(".target").click(function(){
+
+       // $(".target").css("background","cyan")
+
+        $(this).css("background","steelblue")
+      })
+      
+    
+      $(".btn").click(function(){
+        $(".target2 p").css({
+          transform: "rotate(45deg)"
+          
+        })
+      })
+
+    })
+
+
+
+  
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2주차 과제1</title>
+  <style>
+    .target {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 200px;
+      margin: 50px auto;
+
+      /* 전환 효과 부여 */
+      transition: 1s all;
+      /* transition-duration: 1s; */
+      /* transition-property: all; */
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn1">click</button>
+  <button class="btn2">mouseenter</button>
+  <button id="btn3">mouseleave</button>
+  <button class="btn4">hover</button>
+
+  <div class="target target1">event target</div>
+  <div class="target target2">event target2</div>
+  <div class="target target3">event target3</div>
+
+  <!-- Jquery를 이용해 button 6개에 각각 이벤트를 걸고, 함수식은 자유롭게 작성 -->
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* 
+        ㅇ 과제1 - CSS속성으로 event만들기 (필수 과제)
+
+          알고 있는 CSS속성을 활용하여 자유롭게 작성해보세요 
+          구현하고자 하는 것이 안되는 경우 오픈톡으로 피드백 요청!
+          p.s) 기존 예시 지우고 새롭게 작성할 것
+      */
+
+      /* ex1) */
+      $("#btn1").click(function () {
+        // 첫 번째 함수식
+        $(".target1").css({
+          background: "salmon",
+          color: "#fff",
+          transform: "translateX(200px)"
+        })
+        // 두 번째 함수식
+        $(".target1").text("click translate")
+      })
+
+      /* ex2) */
+      $(".btn2").mouseenter(function () {
+        // 첫 번째 함수식
+        $(".target2").css({
+          background: "cadetblue",
+          color: "#fff",
+          transform: "scale(1.5)"
+        })
+        // 두 번째 함수식
+        $(".target2").html("<strong>mouseenter scale<strong>")
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>

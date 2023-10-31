@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery1</title>
+  <style>
+    li {
+      margin: 20px;
+      font-size: 30px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+  </style>
+</head>
+<!-- 
+    html: 문서의 구조 (뼈대)
+    css: 디자인
+
+    ---------------------------------
+
+    javascript: 웹페이지의 동적인 작업을 위한 언어
+    jQuery: js를 사용하기 편하게 개발자들이 만든 플러그인
+
+    ㅇ 영어
+    S(주어) + V(동사) => 문장
+
+    ㅇ jQuery
+    S(선택자, 타겟).V(메서드) => 함수식
+
+    '무엇을?' : 선택자, 타겟, 주어
+    '어떻게 할래?' : 메서드, 명령어, 동사
+
+    -------------------------------------
+
+    ㅇ jQuery 사용 방법
+    1. 초기(core)플러그인 장착***
+    2. jQuery 시동 구문
+    3. 함수식 작성
+
+    -------------------------------------
+
+    ㅇ jQuery 시동 구문
+    $() : jquery를 시작하겠다.
+
+    1. $(document).ready(function(){  })
+    타겟인 document가/ 준비되면 / function실행
+
+    2. $(function(){  })
+    이 구문을 읽으면 function실행
+
+    --------------------------------------
+ -->
+
+<body>
+  <ul id="container">
+    <li class="item1">list1</li>
+    <li class="item2">list2</li>
+    <li class="item3">list3</li>
+    <li class="item4">list4</li>
+  </ul>
+
+  <div class="box"></div>
+  <div id="box2"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간결한 애니메이션</title>
+    <link rel="stylesheet" href="../practice/과제.css">
+</head>
+<body>
+  <button class="btn1">PLAY</button>
+ 
+    <div class="wrap">
+        <div class="apps">
+            <div class="app yellow"></div>
+            <div class="app red"></div>
+            <div class="app blue"></div>
+            <div class="app green"></div>
+            <div class="app pink"></div>
+        </div>
+    </div>
+    
+    <img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0400/ko/20210813/P001501766.jpg/dims/resize/1280" >
+
+    <script src="../day06/3F5218C9-51FA-4325-AA7A-E9288B582E36_web4 day06 setting/js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        
+       $(".btn1").click(function(){
+
+        $(".apps div").addClass("active"),
+          $(".btn1").fadeOut(1000),
+          $(".apps div").fadeOut(15000)
+          $("img").delay(9000).show(3000)}
+       )
+
+
+      
+       })
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+    

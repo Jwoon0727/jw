@@ -1,0 +1,15 @@
+◎ jQuery core plugin (초기 플러그인)
+
+src="https://code.jquery.com/jquery-3.7.1.min.js<script "></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+◎ jQuery 라이브러리 (추가 기능)
+
+1. jQuery-UI.js
+=> animate()에서 backgroundColor지원
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+2. transform.js
+=> animate()에서 transform지원
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.min.js"></script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event5</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+</head>
+<!-- 
+  ㅇ 이벤트 (Event)
+  함수식을 곧바로 실행하지 않고,
+  사용자의 특정한 '행동'이 일어나는 사건이 일어날 때까지 대기시킨다.
+  즉, 사용자의 특정한 '행동'이 일어나면 함수식을 실행시킨다.
+  
+  "언제?" : 이벤트(event)*  <-----
+  "무엇을?" : $("선택자")
+  "어떻게 할래?" : 메서드(method)
+
+    1. 마우스   <-----
+
+    2. 브라우저(window)  
+
+    3. 기타
+ -->
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+      $(document).ready(function(){
+
+
+        $(window).mousemove(function(){
+          $("body").css({
+            backgroundColor: "cyan"
+  
+          });
+          var x = event.clientX;
+          var y = event.clientY;
+  
+          $("body").html(
+            "<p>x좌표값:" + x + "</p><p>y좌표값:" + y + "</p>"
+          )
+        })
+       
+
+      })
+  </script>
+</body>
+
+</html>

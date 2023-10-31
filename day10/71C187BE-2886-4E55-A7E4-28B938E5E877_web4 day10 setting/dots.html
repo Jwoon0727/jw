@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dots</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      
+    }
+
+    li {
+      list-style: none;
+      margin: 0 auto;
+    }
+
+    /* reset end */
+
+    .gallery_box {
+      width: 300px;
+      height: 300px;
+      background: #eee;
+      margin: 0 auto;
+    }
+
+    .dots {
+      width: 300px;
+      /* height: auto; */
+      border: 1px solid red;
+      margin: 30px auto;
+      display: flex;
+      justify-content: auto;
+      
+    }
+
+    
+
+    .dots li a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: #eee;
+      border-radius: 30px;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    /* pseudo class */
+  </style>
+</head>
+
+<body>
+  <div class="gallery_box"></div>
+
+  <ul class="dots">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+  </ul>
+
+</body>
+
+</html>

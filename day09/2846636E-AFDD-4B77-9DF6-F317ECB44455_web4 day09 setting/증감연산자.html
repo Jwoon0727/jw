@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            var count = 0
+
+        $(".project1 .minus").click(function(){
+
+            count--
+
+            $(".project1 span").text(count)
+        })
+        $(".project1 #plus").click(function(){
+
+            count++
+
+            $(".project1 span").text(count)
+        })
+        
+        $(".project2 #plus2").click(function(){
+
+            count +=2
+            $(".project2 span").text(count) })
+            $(".project2 .minus2").click(function(){
+            count -=2
+            $(".project2 span").text(count)
+        })
+        })
+        
+
+    </script>
+</head>
+<body>
+    <p class="project1">
+        <button class="minus">-1</button>
+        <span>0</span>
+        <button id="plus">+1</button>
+      </p>
+    
+      <p class="project2">
+        <button class="minus2">-2</button>
+        <span>0</span>
+        <button id="plus2">+2</button>
+      </p>
+</body>
+</html>

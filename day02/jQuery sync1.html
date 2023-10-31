@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery1</title>
+  <style>
+    li {
+      margin: 20px;
+      font-size: 30px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+  </style>
+</head>
+<!-- 
+    -------------------------------------
+
+    $() : jquery를 시작하겠다.
+
+
+    ㅇ jQuery 시동 구문 (sync해결)
+    컴퓨터는 항상 1행부터 순서대로 함수식을 읽어내려간다. (parsing)
+    이로 인해 html과 script의 위치에 따라서 
+    실행할 당시 문제가 발생할 수 있다.
+
+    1. $(document).ready(function(){  })
+    타겟인 document가/ 준비되면 / function실행
+
+    2. $(function(){  })
+    이 구문을 읽으면 function실행
+
+    --------------------------------------
+ -->
+
+<body>
+  <ul id="container">
+    <li class="item1">list1</li>
+    <li class="item2">list2</li>
+    <li class="item3">list3</li>
+    <li class="item4">list4</li>
+  </ul>
+
+  <div class="box"></div>
+  <div id="box2"></div>
+
+</body>
+
+</html>

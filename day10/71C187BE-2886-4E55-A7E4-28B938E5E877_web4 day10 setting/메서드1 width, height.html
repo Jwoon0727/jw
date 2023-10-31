@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method1</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 50px;
+      border: 20px solid #111;
+      padding: 20px;
+      background: lavender;
+
+      box-sizing: content-box;
+      /* => content-box일때 div의 width는? */
+
+      /* box-sizing: border-box; */
+      /* => border-box일때 div의 width는? */
+    }
+  </style>
+</head>
+<!-- 
+    ㅇ 메서드 (Method)
+    "무엇을?"
+    "어떻게 할래?"" : 메서드(method), 동사, 명령어
+
+    1. CSS관련
+      1) css()
+      2) width() / height() <--
+
+    2. 속성, 값 관련
+
+    3. class 관련 ***
+
+    4. animation 관련 ***
+
+    5. scroll 관련
+
+    6. 구조 관련 (dom)
+
+ -->
+
+<body>
+  <div>content</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    /* 
+      ㅇ jQuery 공통 문법 (추후에도 계속 사용, js)
+        method마다 문법은 다르지만 사용하는 목적(느낌)은 유사
+      1. 선택자(타겟)의 속성(property)을 get
+      2. 선택자(타겟)의 속성(property)을 변경
+    */
+
+    /* 
+      1. $('선택자').width()
+          선택자(타겟)의 width값을 get
+
+      2. $('선택자').width(value)
+          선택자(타겟)의 width값을 value로 변경
+    */
+
+    $(document).ready(function () {
+
+      /* width() 1번 문법 */
+      var dw = $("div").width();
+      console.log(dw);
+
+      var win_w = $(window).width();
+      console.log(win_w);
+
+      /* width() 2번 문법 */
+      // $("div").width("300px");
+      // $("div").width(300);
+      // $("div").height(500);
+
+      $("div").click(function () {
+        $(this).width(300);
+        $(this).height(200);
+      })
+
+      /* ============================================ */
+      /* 
+        ㅇ border, padding, margin을 고려한 width
+      */
+
+      /* $("선택자").width() */
+      /* $("선택자").innerWidth() */
+      /* $("선택자").outerWidth() */
+
+      
+     /* 
+        ㅇ border, padding, margin을 고려한 width
+      */
+
+      /* $("선택자").width()... 100 */
+
+      // innerWidth : content + padding
+      /* $("선택자").innerWidth()... 140  */
+
+      // outerWidth : content + padding + border
+      /* $("선택자").outerWidth() */
+
+      // console.log($("div").width())
+      // console.log(100)
+
+
+      var iw = $("div").innerWidth() // 1번 get문법
+      // var iw = 100;
+      console.log(iw);
+      // console.log(100);
+
+      var ow = $("div").outerWidth()
+      console.log(ow)
+
+    })
+
+  </script>
+</body>
+
+</html>

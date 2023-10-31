@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method1</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 50px;
+      border: 20px solid #111;
+      padding: 20px;
+      background: lavender;
+
+      /* box-sizing: content-box; */
+      /* => content-box일때 div의 width는? */
+
+      /* box-sizing: border-box; */
+      /* => border-box일때 div의 width는? */
+    }
+  </style>
+</head>
+<!-- 
+    ㅇ 메서드 (Method)
+    "무엇을?"
+    "어떻게 할래?"" : 메서드(method), 동사, 명령어
+    
+ -->
+
+<body>
+  <div>content</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+//width 1번 문법
+      var dw = $("div").width()
+      console.log(dw);
+
+      var win_w = $(window).width()  
+      console.log(win_w)
+      // GET 키워드
+//width 2번 문법
+      //$("div").width(300)
+      //$("div").height(200)
+
+      $("div").click(function (){
+        $(this).width(500)
+        $(this).height(200)
+      })
+
+
+
+
+    })
+  </script>
+</body>
+
+</html>

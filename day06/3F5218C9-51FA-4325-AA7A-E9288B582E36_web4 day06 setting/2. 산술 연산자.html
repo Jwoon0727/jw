@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>operator2</title>
+</head>
+<!-- 
+    ㅇ 연산자
+      좌항과 우항 사이의 기호
+
+      1. 문자결합 연산자 String concatenation operators
+      2. 산술 연산자 Numeric operators <--
+      3. 비교 연산자 Comparison operator
+      4. 대입(할당) 연산자 Assignment operators
+      5. 증감 연산자 Increment / Decrement operators
+   -->
+
+<body>
+  <script>
+
+    /* 2. 산술 연산자 */
+    /* 
+      tip)
+      1. 좌항 and 우항 number 
+      2, 산술연산식 결과는 number item1 도출
+    */
+
+    let num1 = 20;
+    let num2 = 10;
+    let num3 = 9;
+    let num4 = 2;
+
+    document.write(num1 + num2, "<br>")
+    document.write(num1 - num2, "<br>")
+    document.write(num1 * num2, "<br>")
+    document.write(num1 / num2, "<br>")
+
+    document.write(num1 % num2, "<br>")
+    // %는 나머지를 구하는 식이다 
+    document.write(num1 % num3, "<br>")
+
+    document.write("<hr>")
+
+
+    /*
+      ㅇ 변수(사물함) 사용 목적
+        1. 함수식 정리 (유용하게 재사용, save & load)
+        2. 함수식 업그레이드 <-
+    */
+
+    var a_price = 3000
+    var a_count = 3
+    var total = a_price * a_count 
+
+
+    // 사과의 가격은 1000원이고
+    // 3개 구입하면 총 3000원 입니다.
+    document.write(
+      "사과의 가격은" + a_price +"원이고<br>" +a_count+"개 구입하면 총" + total +"원 입니다."
+    )
+
+    // 사과는 1000원, 바나나는 3000원이고,
+    // 사과 3개와 바나나 5개를 사면 총 18000원입니다.
+
+    //과제
+
+    document.write(
+      "사과는 1000원, 바나나는 3000원이고,<br>사과 3개와 바나나 5개를 사면 총 18000원입니다."
+    )
+  </script>
+</body>
+
+</html>

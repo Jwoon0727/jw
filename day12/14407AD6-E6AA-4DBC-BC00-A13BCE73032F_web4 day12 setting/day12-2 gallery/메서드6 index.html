@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method6</title>
+</head>
+
+<style>
+  li {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 20px;
+  }
+</style>
+
+<body>
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+    <li>list4</li>
+    <li>list5</li>
+    <li>list6</li>
+  </ul>
+
+  <p>
+    <span>all</span>개 중에서 <i>n</i>번째입니다.
+  </p>
+
+  <!-- ㅇ 향후 실습을 위해 필수적으로 익혀야할 내용 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+      // length = get
+
+      var all = $("li").length;
+      //$("li").length; = 6
+
+      $("span").text(all)
+/*=======================================================================*/
+    
+      //index() 선택자의 순서값
+      $("li").click(function(){
+        /* 변수 재료? 순서값 */
+        let index = $(this).index() +1;
+
+        //index ++ 해두 됨
+
+
+
+        $("i").text(index)
+      })
+
+      })
+
+  </script>
+</body>
+
+</html>

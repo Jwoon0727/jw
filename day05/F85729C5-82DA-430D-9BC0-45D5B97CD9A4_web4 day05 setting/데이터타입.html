@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variable types</title>
+</head>
+
+<body>
+  <script>
+
+    /* 
+      ㅇ 데이터타입 (Variable types)
+      
+      ㅇ single item (primitive)
+        1) 문자형 데이터 (String)
+        2) 숫자형 데이터 (Number)
+        3) 논리형 데이터 (Boolean)  
+        4) Null, Undefined
+        
+      item?
+      사물함(변수), 
+      container(객체, 배열 web5) 등에 
+      save할 수 있는 데이터
+
+      Variable types?
+      사물함(변수)에 save되어 있는 데이터(item)의 타입
+    */
+
+    // 1. 문자형 데이터 (String)
+
+     var str1;
+     str1 = "최정운"
+    //같은것
+     var str1 = "최정운"
+
+     var str2 = "100"
+
+     var str3 = "<h1>string<h1>"
+     
+     
+    
+     document.write(str3)
+     document.write(str1)
+     document.write(str1, "<br>")
+     document.write("<hr>")
+
+    // 2. 숫자형 데이터 (Number)
+
+     let str1 = "홍서효";
+     let num2 = Number(str2);
+     //str2는 "100" 문자 100이었지만 Number를 붙이면 숫자 100 이됨
+
+
+
+     document.write(num2, "<br>")
+     document.write(typeof num2, "<br>")
+
+     document.write(num1 + num2, "<br>")
+     //document.write(200 + "100") //문자결합
+     //Number를 사용하므로 산술연산이 된다 300
+
+
+
+    // 3. 논리형 데이터 (Boolean)
+    var bool1 = true;
+    var bool2 = false;
+
+    var bool3 = 1 > 2;
+      // 사물함 (변수)에 비교 연산식을 넣으면 boolean
+    var bool4 = 10 < 12
+
+    document.write(bool3, "<br>")
+    document.write(bool4, "<br>")
+    document.write("<hr>")
+
+    // 4. 값을 정의할 수 없는 형식
+    let a;
+    //let a = underfined;
+    let b = null;
+    document.write(a, "<br>")
+    document.write(b, "<br>")
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rolling2</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* reset end */
+
+    /* 빨강 / 창틀 */
+    #banner {
+      border: 10px solid red;
+      width: 80%;
+      height: 300px;
+      margin: 100px auto;
+     
+
+      position: relative;
+    }
+
+    /* 파랑 / 띠 */
+    .slide_wrapper {
+      border: 8px solid blue;
+      width: 100%;
+      height: 400%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* 초록 / slide */
+    .slide_wrapper li {
+      border: 5px solid green;
+      width: 100%;
+      height: 25%;
+    }
+
+    .slide_wrapper a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      position: relative;
+    }
+
+    .slide_wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide_wrapper span {
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 36px;
+      color: #fff;
+      padding: 20px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 빨강 / 창틀 -->
+  <section id="banner">
+
+    <!-- 파랑 / 띠, animate타겟 -->
+    <ul class="slide_wrapper">
+
+      <!-- 초록 / 우리가 볼 슬라이드 -->
+      <li>
+        <a href="#">
+          <img src="images/img01.jpg" alt="slide1">
+          <span>슬라이드텍스트1</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img02.jpg" alt="slide2">
+          <span>슬라이드텍스트2</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img03.jpg" alt="slide3">
+          <span>슬라이드텍스트3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img04.jpg" alt="slide4">
+          <span>슬라이드텍스트4</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      var count = 0;
+
+      function autoSlide() {
+        setInterval(function () {
+
+          count++
+
+          if (count > 3) {
+            count = 0;
+          }
+
+          $(".slide_wrapper").animate({ top: (-100 * count) + "%" });
+
+        }, 3000)
+      }
+
+      autoSlide();
+
+    })
+
+
+  </script>
+</body>
+
+</html>

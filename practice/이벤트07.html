@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            width: 300px;
+            height: 250px;
+            border: 1px solid #333;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box01{
+            
+        }
+        .box02{
+
+        }
+        
+    </style>
+</head>
+<body>
+
+    <button class="minus">-1</button>
+    <span>0</span>
+    <button class="plus">+1</button>
+
+    <div class="box01">박스</div>
+    <div class="box02">
+        <p>박스의 내용이 여기에 들어갑니다</p>
+    </div>
+
+    <script src="../day07/A925BCDB-699B-48D4-9A26-BDD12FB31DC0_web4 day07 setting/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var count = 0
+        $(".plus").click(function(){
+
+            count++
+
+            $("span").text(count)
+        })
+        $(".minus").click(function(){
+            
+            count--
+
+            $("span").text(count)
+        })
+        $(".plus, .minus").hover(function(){
+            $(this).css("color","red");
+        }, function() {
+            $(this).css("color", "")
+        }
+        )
+               
+
+
+
+
+
+
+        })
+               // 증감 연산자 END
+
+
+
+    </script>
+</body>
+</html>

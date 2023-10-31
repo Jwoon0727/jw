@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>opeartor5</title>
+</head>
+<!-- 
+    ㅇ 연산자
+      좌항과 우항 사이의 기호
+
+      1. 문자결합 연산자 String concatenation operators
+      2. 산술 연산자 Numeric operators
+      3. 비교 연산자 Comparison operator
+      4. 대입(할당) 연산자 Assignment operators
+      5. 증감 연산자 Increment / Decrement operators  <--
+   -->
+
+<body>
+  <button class="minus">-1</button>
+  <span>0</span>
+  <button class="plus">+1</button>
+
+  <script src="../A925BCDB-699B-48D4-9A26-BDD12FB31DC0_web4 day07 setting/js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+
+      var count = 0;//초기값은 이벤트 바깥에 한번만!!!
+
+      $(".plus").click(function() {
+
+        
+        count++ //count값 1증가
+
+
+        $("span").text(count)
+      })
+      $(".minus").click(function() {
+
+        
+        count-- //count값 -1감소
+
+        
+        $("span").text(count)
+      })
+
+    })
+
+  </script>
+
+
+
+
+  <script>
+    /* 5. 증가연산자 감소연산자 */
+    /*
+      tip)
+      1. 대입연산자의 파생연산자
+      2. 1증가 or 1감소 값으로 *갱신(update)
+      3. 갱신(update)할 초기값이 반드시 필요
+    */
+  </script>
+</body>
+
+</html>

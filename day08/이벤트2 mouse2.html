@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event2</title>
+  <style>
+    /* reset(CSS초기화) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* reset end */
+
+    .target1 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 50px;
+      transition: 0.4s all;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .target2 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin: 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .btn {
+      width: 50px;
+      height: 20px;
+    }
+  </style>
+
+</head>
+<!-- 
+    ㅇ 이벤트 (Event)
+      작성한 함수식(S.V)을 바로 실행하지 않고, (대기)
+      사용자의 특정한 "행동"을 하는 사건이 발생하면 실행
+
+      언제? : 이벤트(event)**
+      
+      무엇을? : $("선택자") , 타겟 , 주어
+      어떻게 할래? : 메서드() , 명령어, 동사
+
+    1. 마우스   <-----------
+      1) click()
+      2) mouseenter()
+      3) mouseleave()
+      4) hover()
+
+      5) mousemove() + @
+      6) mousedown()
+      7) mouseup()
+
+      8) mouseover()
+      9) mouseout()
+
+    2. 브라우저(window)
+
+    3. 기타
+ -->
+
+<body>
+  <div class="target1">content</div>
+
+  <div class="target2">
+    <p>content2</p>
+    <button class="btn">실행</button>
+  </div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* mousemove event */
+      // $(".target1").mousemove(function () {
+      //   $(this).css({
+      //     background: "salmon",
+      //     color: "#fff"
+      //   })
+      // })
+
+      /* mousedown event */
+      /* 마우스버튼을 누르고 있거나, 눌렀을 때 */
+      $(".target1").mousedown(function () {
+        $(this).css({
+          background: "salmon",
+          transform: "rotate(45deg)"
+        });
+      })
+
+      /* mouseup event */
+      /* 마우스버튼에서 손을 떼었을 때 */
+      $(".target1").mouseup(function () {
+        $(this).css({
+          background: "gold",
+          transform: "rotate(0deg)"
+        });
+      })
+
+      /* ------------------------------- */
+      /* 주의) */
+
+      /* mouseover event */
+      $(".target1").mouseover(function () {
+        $(this).css("background", "salmon")
+      })
+
+      /* mouseout event */
+      $(".target1").mouseout(function () {
+        $(this).css("background", "cadetblue")
+      })
+
+    })
+
+  </script>
+
+</body>
+
+</html>

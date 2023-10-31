@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rolling1</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* reset end */
+
+    /* 빨강 / 창틀 */
+    #banner {
+      border: 10px solid red;
+      width: 80%;
+      height: 300px;
+      margin: 100px auto;
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    /* 파랑 / 띠 */
+    .slide_wrapper {
+      /* border: 8px solid blue; */
+      width: 400%;
+      height: 100%;
+      display: flex;
+
+      position: absolute;
+      top: 0;
+      /* 1번 slide */
+      left: 0;
+      /* 2번 slide */
+      /* left: -100%; */
+      /* 3번 slide */
+      /* left: -200%; */
+      /* 4번 slide */
+      /* left: -300%; */
+    }
+
+    /* 초록 / slide */
+    .slide_wrapper li {
+      /* border: 5px solid green; */
+      width: 25%;
+      height: 100%;
+    }
+
+    .slide_wrapper a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      position: relative;
+    }
+
+    .slide_wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide_wrapper span {
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 36px;
+      color: #fff;
+      padding: 20px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 빨강 / 창틀 -->
+  <section id="banner">
+
+    <!-- 파랑 / 띠, animate타겟 -->
+    <ul class="slide_wrapper">
+
+      <!-- 초록 / 우리가 볼 슬라이드 -->
+      <li>
+        <a href="#">
+          <img src="images/img01.jpg" alt="slide1">
+          <span>슬라이드텍스트1</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img02.jpg" alt="slide2">
+          <span>슬라이드텍스트2</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img03.jpg" alt="slide3">
+          <span>슬라이드텍스트3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img04.jpg" alt="slide4">
+          <span>슬라이드텍스트4</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    /*
+      ㅇ Rolling
+      시간의 흐름에 따라 자동으로 함수식을 실행하게 하는 기능
+      banner, slider 등에서 주로 사용된다.
+     */
+    /* 0 ... 1 ... 2 ... 3 ... 0 */
+
+    // setInterval( 반복하고싶은function, 쉬는시간 )
+    // clearInterval()
+
+    // setInterval(function () { })
+    // 쉬는시간X function 반복
+    // setInterval(function () { }, 3000)
+    // 3초주기로 function 반복
+
+    // 1.
+    // 운동 1set (function)
+    // 1) 팔굽혀펴기
+    // 2) 스쿼트
+    // 3) 턱걸이
+
+    // 2.
+    // 쉬는시간(주기)
+
+    // setInterval(function () {
+    //   console.log("print")
+    // }, 3000)
+
+    $(document).ready(function () {
+
+      var count = 0;
+
+      var rolling;
+      /* 
+      빈 rolling 사물함(변수)을 만드는 이유는
+      오로지 clearInterval을 용이하게 만드는 목적
+
+      rolling사물함에 setInterval()을 넣으면 rolling실행
+      rolling사물함을 clearInterval()로 비우면 rolling중지
+      */
+
+      /* autoSlide 함수 선언 */
+      function autoSlide() {
+        rolling = setInterval(function () {
+
+          count++
+
+          if (count === 4) {
+            count = 0;
+          }
+
+          $(".slide_wrapper").animate({ left: (-100 * count) + "%" })
+          // $(".slide_wrapper").animate({ left: (-100*1)+"%" });
+          // $(".slide_wrapper").animate({ left: (-100*2)+"%" });
+          // $(".slide_wrapper").animate({ left: (-100*3)+"%" });
+          // $(".slide_wrapper").animate({ left: (-100*0)+"%" });          
+
+        }, 1000)
+      }
+
+      autoSlide(); // rolling 초기 실행
+
+      /* ------------------------------------ */
+
+      $("#banner").mouseenter(function () {
+        clearInterval(rolling)
+      })
+
+      $("#banner").mouseleave(function () {
+        autoSlide(); // rolling 재실행
+      })
+
+    })
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

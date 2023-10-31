@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event4 on</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 150px;
+      background: steelblue;
+      margin: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box a {
+      display: block;
+      height: 100%;
+      text-decoration: none;
+      font-family: 'Times New Roman', Times, serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+<!-- 
+  ㅇ 이벤트 (Event)
+  함수식을 곧바로 실행하지 않고,
+  사용자의 특정한 '행동'이 일어나는 사건이 일어날 때까지 대기시킨다.
+  즉, 사용자의 특정한 '행동'이 일어나면 함수식을 실행시킨다.
+  
+  "언제?" : 이벤트(event)*  <-----
+  "무엇을?" : $("선택자")
+  "어떻게 할래?" : 메서드(method)
+
+    1. 마우스   
+
+    2. 브라우저(window)
+
+    3. 기타 <-----
+ -->
+
+<body>
+
+  <div class="box">
+    <a href="#">
+      <h2>on binding:</h2>
+      <p>#multi event</p>
+    </a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+
+      $(".box a").click(function(){
+        consol.log("click")
+      })
+      $(".box a").mouseenter(function(){
+        consol.log("mouseenter")
+      })
+      //이거를 한번에 묶는 법
+
+      //on event ver1
+
+      $(".box a").on("click mouseenter",function(){
+
+        console.log("click or mouseenter")
+      })
+
+      //on event ver2
+      $(".box a").on({
+        click: function(){consol.log("click")},
+        "mouseenter":function(){consol.log("mouseenter")},
+      })
+
+
+
+
+
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>conditional operator</title>
+</head>
+
+<body>
+  <script>
+    /*
+     ㅇ 조건문 (conditional operator, 조건형 제어문) 
+          조건(statement)값이 true일 때만
+          {scope} 안에 있는 함수식을 실행한다.
+    */
+
+    /* ㅇ if, else if, else */
+    /* 혹시? 아니면 혹시? 그렇지 않으면*/
+
+    //if(){함수식 s v}
+
+    //if(1 < 2){document.write("if조건문입니다") }
+    //if(1 > 2){document.write("if조건문입니다") }
+
+    var name = "최정ㄴㅇㄹ운"
+
+    if(name === "최정운" ){
+      document.write("안녕하세요")
+    }
+
+    else if(name === "강휘원"){
+      document.write("안녕하세요!")
+    }
+
+    else{
+      document.write("죄송해여 누군지 몰라요","<br>","<hr>")
+    }
+
+
+
+    var score = 89
+
+    if(score >=90){
+      document.write("A학점입니다")
+    }
+    else if(score >=80){
+      document.write("B학점입니다")
+    }
+    else if(score >=70){
+      document.write("C학점입니다")
+    }
+    else {
+      document.write("탈락입니다")
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>operator3</title>
+</head>
+<!-- 
+    ㅇ 연산자
+      좌항과 우항 사이의 기호
+
+      1. 문자결합 연산자 String concatenation operators
+      2. 산술 연산자 Numeric operators
+      3. 비교 연산자 Comparison operator  <--
+      4. 대입(할당) 연산자 Assignment operators
+      5. 증감 연산자 Increment / Decrement operators
+   -->
+
+<body>
+  <script>
+
+    /* 3-1. 비교 연산자  */
+    /* 
+      tip)
+      1. 항상 좌항이 기준
+      2. 비교연산식 결과는 항상 true / false (boolean)
+    */
+
+
+    /* 연산자는 항상 좌항이 기준 */
+
+    document.write(10 > 5, "<br>") // 크다, 초과
+    document.write(10 >= 5, "<br>") // 크거나 같다, 이상
+    document.write(10 < 5, "<br>") // 작다, 미만
+    document.write(10 <= 5, "<br>") // 작거나 같다, 이하
+    document.write(10 != 5, "<br>") // 같지 않다
+
+    document.write("<hr>")
+
+    /* -------------------------------------- */
+
+    let string = "100"
+    let number = 100
+
+    //string = number
+
+    // 1. 같다 2. 같지 않다      답은 3. 같을 수도 있고 같지 않을 수도 있다
+
+    document.write(string == number, "<br") //true
+
+    document.write(string === number, "<br") //false
+    
+    // 데이터타입은 관계x, 값이 같다
+		// loose equality
+
+
+
+     /* -------------------------------------- */
+
+    /*
+      3-2. 논리 연산자 => boolean
+        1. && (and) 
+        2. || (or)
+        3. ! (not)
+    */
+
+    //1 < x < 10  //이건 좌항과 우항이 없다 따라서
+
+    //x>1 x<10 //라고 표기해야함 두식이 다 참이라면 1 < x < 10 이 참 하지만 
+    //1개는 참 1개는 참이 아니라면 false가 나온다
+
+
+    /* 숙제 수행 여부 t,f */
+		var 국어 = false
+		var 수학 = false
+		let 영어 = true
+		let 과학 = false
+
+
+    //or
+    //true 기준, 관대 ||
+    //국어 || 수학 || 영어 // ||는 or의 뜻이 있다
+    
+    document.write(국어 || 수학 || 영어, "<br>")
+
+
+    //and 
+    //true 기준, 깐깐 &&
+    document.write(국어 && 수학, "<br>")
+    document.write(국어 && 수학 && 영어, "<br>")
+
+
+
+
+    let x = 15
+
+    document.write(x>1 || x<10, "<br>")
+    // true
+
+    document.write(x>1 && x<10, "<br>")
+    // false
+
+  </script>
+</body>
+
+</html>

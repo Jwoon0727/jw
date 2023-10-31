@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery1</title>
+  <style>
+    li {
+      margin: 20px;
+      font-size: 30px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 100px;
+    }
+  </style>
+
+<!-- 
+    Q1) script는 head태그 안에 써도 되나?
+    A1) 시동구문을 사용하지 않으면 함수식만으로 안된다.
+        script는 html을 타겟으로 control하기 때문
+   -->
+
+
+   <!-- 1) 초기플러그인을 읽어 컴퓨터는 jQuery를 이해 -->
+
+
+
+</head>
+<!-- 
+    -------------------------------------
+
+    $() : jquery를 시작하겠다.
+
+
+    ㅇ jQuery 시동 구문 (sync해결)
+    컴퓨터는 항상 1행부터 순서대로 함수식을 읽어내려간다. (parsing)
+    이로 인해 html과 script의 위치에 따라서 
+    실행할 당시 문제가 발생할 수 있다.
+
+    1. $(document).ready(function(){  })
+    타겟인 document가/ 준비되면 / function실행
+
+    2. $(function(){  })
+    이 구문을 읽으면 function실행
+
+    --------------------------------------
+ -->
+
+<body>
+  <ul id="container">
+    <li class="item1">list1</li>
+    <li class="item2">list2</li>
+    <li class="item3">list3</li>
+    <li class="item4">list4</li>
+  </ul>
+
+  <div class="box"></div>
+  <div id="box2"></div>
+  <!-- 1) html, css를 다 읽어냄 -->
+
+
+  <script src="../day02/035C4846-5DF8-4D4F-A8C2-7DDBC03138D9_web4 day02 setting/js/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(".box").css("background-color","salmon")
+  </script>
+  <!-- 
+    Q1) script는 body태그 안에 써야 하나?
+    A1) 시동구문을 사용하지 않아도 함수식만으로 가능하다.
+        body태그에 존재하는 html을 모두 읽어낸 이후에
+        script를 실행하기 때문
+   -->
+
+</body>
+
+</html>

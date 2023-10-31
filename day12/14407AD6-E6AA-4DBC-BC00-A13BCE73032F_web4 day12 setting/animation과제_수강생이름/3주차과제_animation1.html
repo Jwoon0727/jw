@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3주차 과제1 - 더 복잡한 애니메이션</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 50px;
+      background: #aaa;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .box:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <div class="box box4"></div>
+  <div class="box box5"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".box").click(function () {
+        // 클릭 시 각 상자가 다른 애니메이션을 수행하도록 설정
+        if ($(this).hasClass('box1')) {
+          $(this).animate({
+            marginLeft: "300px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "blue"
+          }, 1000);
+        } else if ($(this).hasClass('box2')) {
+          $(this).animate({
+            marginLeft: "300px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "green"
+          }, 1000);
+        } else if ($(this).hasClass('box3')) {
+          $(this).animate({
+            marginLeft: "300px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "purple"
+          }, 1000);
+        } else if ($(this).hasClass('box4')) {
+          $(this).animate({
+            marginLeft: "300px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "orange"
+          }, 1000);
+        } else if ($(this).hasClass('box5')) {
+          $(this).animate({
+            marginLeft: "300px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "red"
+          }, 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slider</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    /* 빨강 / 창틀 */
+    .slider {
+      border: 3px solid red;
+      width: 80%;
+      height: 400px;
+      margin: 100px auto;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 파랑 / 띠 */
+    .slide_wrapper {
+      /*border: 5px solid blue;*/
+      width: 400%;
+      height: 90%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+
+    }
+
+    /* 초록 / slide */
+    .slide_wrapper li {
+      /*border: 3px solid green;*/
+      width: 25%;
+      height: 100%;
+    }
+
+    .slide_wrapper a {
+      border: 3px solid green;
+      display: block;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide_wrapper img{
+      /*border: 3px solid orange;*/
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide_wrapper span {
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      padding: 20px;
+      font-size: 30px;
+
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .prev {
+      width: 60px;
+      height: 60px;
+
+      position: absolute;
+      top: 50%;
+      left: 20px;
+
+      transform: translateY(-50%);
+      z-index: 100;
+
+
+    }
+    .next  {
+      width: 60px;
+      height: 60px;
+
+      position: absolute;
+      top: 50%;
+      right: 20px;
+
+      transform: translateY(-50%);
+      z-index: 100;
+    }
+
+
+    .dots{
+      border: 5px solid orange;
+      width: 100%;
+      height: 10%;
+      display: flex;
+
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+    }
+
+    .dots li {
+      border: 1px solid rgba(0, 0, 0, 0.6);
+     
+      border-radius: 50%;
+      text-indent: -9999px;
+      width: 30px;
+      height: 100%;
+    }
+
+    /*가상 클래스*/
+    .dots li.active{
+      background: #333;
+    }
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- 빨강 / 창틀 -->
+  <div class="slider">
+    <button class="prev">이전</button>
+    <button class="next">다음</button>
+
+    <!-- 파랑 / animate타겟 -->
+    <ul class="slide_wrapper">
+
+      <!-- 초록 / 슬라이드 -->
+      <li>
+        <a href="#">
+          <img src="images/img01.jpg" alt="slide1">
+          <span>슬라이드텍스트1</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img02.jpg" alt="slide2">
+          <span>슬라이드텍스트2</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img03.jpg" alt="slide3">
+          <span>슬라이드텍스트3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="images/img04.jpg" alt="slide4">
+          <span>슬라이드텍스트4</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="dots">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    /* ㅇ slider */
+
+    // 1. next, prev click event
+    // 2. next, prev를 click할 때마다
+    //    dots의 순서값에 따라 class 변경
+
+    // 3. 3초마다 next를 클릭하는 rolling(function) 생성
+
+    // 4. slider에 mouseover되면 clearInterval,
+    //             mouseout되면 다시 rolling 적용
+
+    // 5. dots li를 click하면 해당 순서값으로 이미지 이동    
+
+    $(document).ready(function () {
+
+      var cn = 0;
+      var rolling
+
+      /* coding start! */
+      $(".next").click(function () {
+
+        cn++
+
+        if(cn === 4){
+          cn=0
+        } //갱신
+
+
+        //    궁극적인 목표1
+        $(".slide_wrapper").animate({
+          left: (-100*cn)+"%"
+
+
+        })
+        //================================================================
+        //    궁극적인 목표2
+        $(".dots li").removeClass("active") //청소!!!
+        $(".dots li").eq(cn).addClass("active")
+      })
+
+
+      //================================================================
+      $(".prev").click(function () {
+
+       
+        
+      
+  
+          cn--
+  
+          if(cn === -1){
+            cn=3
+          } //갱신
+
+          $(".slide_wrapper").animate({
+          left: (-100*cn)+"%"
+        })
+        $(".dots li").removeClass("active") //청소!!!
+        $(".dots li").eq(cn).addClass("active")
+
+      })
+
+      //================================================================
+
+      function autoSlide(){
+        rolling = setInterval( function(){
+          $(".next").click()
+        },3000)
+      }
+
+      autoSlide()
+      //================================================================
+
+      $(".slider").mouseenter(function (){
+        clearInterval(rolling)
+      })
+
+      $(".slider").mouseleave(function (){
+        autoSlide()
+      })
+      //================================================================
+
+      $(".dots li").click(function (){
+        //궁극적인 목표
+
+       cn = $(this).index();
+
+
+        $(".slide_wrapper").animate({
+          left: (-100 * cn) + "%"
+        })
+
+        $(".dots li").removeClass("active") //청소!!!
+        $(this).addClass("active")
+
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>

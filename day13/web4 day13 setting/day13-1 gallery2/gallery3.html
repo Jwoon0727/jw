@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery3</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* reset end */
+
+    .gallery_box {
+      border: 5px solid salmon;
+      width: 50%;
+      height: 400px;
+      margin: 50px auto;
+    }
+
+    .gallery_box a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery_box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .btn_box {
+      width: 50%;
+      height: 30px;
+      /* border: 1px solid #000; */
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    button {
+      width: 50px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gallery_box">
+    <a href="#">
+      <img src="./images/img01.jpg" alt="소녀와고양이1">
+    </a>
+  </div>
+
+  <div class="btn_box">
+    <button class="prev">이전</button>
+    <button class="next">다음</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      var count = 1;
+      /* 초기값은 바깥에 건들지 않았을때 가질 값 */
+
+      $(".next").click(function () {
+        /* 변수 재료? count! 증감연산자 */
+        count++
+
+        /* 궁극적인 목표 */
+        $("img").attr("src", "./images/img0" + count + ".jpg");
+      })
+
+
+    })
+  </script>
+</body>
+
+</html>

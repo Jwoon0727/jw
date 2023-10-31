@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method4</title>
+  <style>
+    #wrap {
+      border: 10px inset rgba(0, 0, 0, 0.5);
+      padding: 10px;
+    }
+
+    .target1,
+    .target2,
+    #target3 {
+      width: 300px;
+      height: 200px;
+      margin: 30px auto;
+      background: salmon;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      /* display: none; */
+    }
+
+    .target2 {
+      background: cadetblue;
+    }
+
+    #target3 {
+      background: steelblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div>
+      <strong>1. show / hide : </strong>
+      <button class="btn1">show</button>
+      <button class="btn2">hide</button>
+      <button class="btn3">toggle</button>
+    </div>
+
+    <div>
+      <strong>2. fadeIn / fadeOut : </strong>
+      <button class="btn4">fadeIn</button>
+      <button class="btn5">fadeOut</button>
+      <button class="btn6">fadeToggle</button>
+    </div>
+
+    <div>
+      <strong>3. slideDown / slideUp : </strong>
+      <button class="btn7">slideDown</button>
+      <button class="btn8">slideUp</button>
+      <button class="btn9">slideToggle</button>
+    </div>
+  </div>
+
+  <div class="target1">target1</div>
+  <div class="target2">target2</div>
+  <div id="target3">target3</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* ㅇ animation method */
+      // $("선택자").animation();
+
+
+
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gnb1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /*
+      ㅇ dropmenu tip
+      1. container 레이아웃 배치
+      2. li 무시
+      3. 대메뉴부터 css
+      4. .sub a 일괄 처리
+    */
+
+    .gnb {
+      border: 1px solid red;
+      width: 800px;
+      /* height: auto; */
+      text-align: center;
+      display: flex;
+
+      position: absolute;
+      top: 50px;
+      right: 50px;
+    }
+
+    .gnb>li>a {
+      display: block;
+      border: 3px solid blue;
+      background: salmon;
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+    .gnb>li>a:hover{
+      background: brown;
+      color: #fff;
+    }
+
+    .sub{
+      display: none;
+
+
+    }
+
+    
+    .sub a {
+      background: orange;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="gnb">
+
+    <li>
+      <a href="#">MENU-1</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU1 end -->
+    <li>
+      <a href="#">MENU-2</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU2 end -->
+    <li>
+      <a href="#">MENU-3</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU3 end -->
+    <li>
+      <a href="#">MENU-4</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU4 end -->
+
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* gnb1 */
+      $(".gnb").mouseenter(function () {
+        $(".sub").stop().slideDown()
+
+
+      })
+      $(".gnb").mouseleave(function () {
+        $(".sub").stop().slideUp()
+
+
+      })
+
+    })
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery_selector2</title>
+  <style>
+    /* reset CSS초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+      margin: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    /* reset end */
+
+    #wrap {
+      width: 500px;
+      height: 400px;
+      background: #333;
+      margin: 0 auto;
+    }
+
+    .container {
+      width: 400px;
+      height: 300px;
+      background: #555;
+      margin: 0 auto;
+    }
+
+    ul {
+      width: 300px;
+      height: 200px;
+      background: bisque;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+
+    <div class="container">
+
+      <ul>
+        <li>
+          HOME
+          <span>텍스트</span>
+          <a href="#">바로가기</a>
+        </li>
+        <!-- list1 end -->
+        <li>
+          ABOUT
+          <span>텍스트</span>
+          <a href="#">바로가기</a>
+        </li>
+        <!-- list2 end -->
+        <li>
+          PRODUCT
+          <span>텍스트</span>
+          <a href="#">바로가기</a>
+        </li>
+        <!-- list3 end -->
+        <li>
+          SHOP
+          <span>텍스트</span>
+          <a href="#">바로가기</a>
+        </li>
+        <!-- list4 end -->
+        <li>
+          NEWS
+          <span>텍스트</span>
+          <a href="#">바로가기</a>
+        </li>
+        <!-- list5 end -->
+      </ul>
+
+      <p>p태그입니다</p>
+
+      <span>span태그입니다</span>
+
+    </div>
+
+  </div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    /* 
+      ㅇ jQuery selector2 (관계, 구조 탐색 메서드)
+        웹페이지에 존재하는 모든 html요소를
+        선택자(타겟)으로 가져올 수 있도록 한다
+    */
+
+    $(document).ready(function () {
+
+      // 1. ***parent() : 선택자(타겟)의 직속부모태그를 선택자로 지정하는 method      
+
+      $("ul").parent().css("border", "5px solid red")
+      // $(".container")
+
+      // 2. parents() : 선택자(타겟)의 부모태그들을 선택자로 지정하는 method, but 특정하여 사용
+
+      // 3. children() : 선택자(타겟)의 직속자식태그를 선택자로 지정하는 method, but 특정하여 사용
+      // $(".container > ul, .container > p, .container > span")
+      // $(".container").children('p').css({ color: "red" })
+
+      // 4. ***find(): 선택자(타겟)의 자식+후손태그를 선택자로 지정하는 method, but 특정하여 사용   
+        $(".container").find("a").css({
+          backgroundColor: "gold"
+        })
+
+      // 5. next(): 선택자(타겟)의 다음 순서요소를 선택자로 지정하는 method
+        $(".container ul li:eq(0)").next().css({
+          backgroundColor: "navy"
+        })
+        
+      // 6. prev(): 선택자(타겟)의 이전 순서요소를 선택자로 지정하는 method
+        $(".container ul li:eq(3)").prev().css({
+          backgroundColor: "pink"
+        })
+        
+      // 7. siblings(): 선택자(타겟)의 형제요소들을 선택자로 지정하는 method, but 특정하여 사용
+        $("ul").siblings("p").css({
+          backgroundColor: "green"
+        })
+      // 8.filter()
+        $("li").filter(":first").css({
+          backgroundColor: "cyan"
+        })
+
+      // 9. eq()
+        $("li").eq(3).css({
+          border: "10px inset gray"
+        })
+        
+
+      //10. $("선택자").not
+       
+       
+       
+
+    })
+     
+  </script>
+</body>
+
+</html>

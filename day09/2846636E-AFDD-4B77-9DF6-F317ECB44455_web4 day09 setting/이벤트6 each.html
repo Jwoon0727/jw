@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event6 each</title>
+</head>
+<!-- 
+  ㅇ 이벤트 (Event)
+  함수식을 곧바로 실행하지 않고,
+  사용자의 특정한 '행동'이 일어나는 사건이 일어날 때까지 대기시킨다.
+  즉, 사용자의 특정한 '행동'이 일어나면 함수식을 실행시킨다.
+  
+  "언제?" : 이벤트(event)*  <-----
+  "무엇을?" : $("선택자")
+  "어떻게 할래?" : 메서드(method)
+
+    1. 마우스   
+
+    2. 브라우저(window)
+
+    3. 기타 <-----
+ -->
+
+<body>
+  <p>2023년</p>
+  <p>10월</p>
+  <p>23일</p>
+  <p>월요일</p>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      /* 
+        ㅇ jQuery 공통 문법 (추후에도 계속 사용, js)
+          method마다 문법은 다르지만 사용하는 목적(느낌)은 유사
+        1. 선택자(타겟)의 속성(property)을 get
+        2. 선택자(타겟)의 속성(property)을 변경
+      */
+      $("p:eq(0)").text()
+
+//============================================================================
+      /* 1~4번째 p태그의 text정보를 console에 기록하기 */
+
+      console.log( $("p:eq(0)").text() )
+      console.log( $("p:eq(1)").text() )
+      console.log( $("p:eq(2)").text() )
+      console.log( $("p:eq(3)").text() )
+
+      /* p태그 각각(each) 작성한 함수식을 일제히 적용 */
+      $('p').each(function(){
+        //  each +this => 각각 선택자
+        console.log($(this).text())
+
+      } )
+
+
+    })
+  </script>
+</body>
+
+</html>

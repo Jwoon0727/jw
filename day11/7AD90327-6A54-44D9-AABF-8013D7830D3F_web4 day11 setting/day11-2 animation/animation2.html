@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation2 plugin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: gray;
+      text-align: center;
+      margin: 50px;
+      position: relative;
+      /*left: 50%;*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      // Q) 
+      // .box1을 클릭하면,
+
+      // 클릭한 것의 margin-left를 300으로 1초동안 변경
+      // 클릭한 것의 left를 50%로 1초동안 변경
+      // 클릭한 것의 backgroundColor를 원하는 색으로 1초동안 변경
+      // 클릭한 것을 50deg +방향으로 변환
+      // 클릭한 것을 X축으로 500px만큼 +방향으로 변환
+
+      $(".box1").click(function(){
+        $(this).animate({
+          //marginLeft: 300
+          left: "50%",
+
+          backgroundColor: "red",
+          //transform: "rotate(50deg)",
+          transform: "rotate(50deg) translateX(300px) scale(3)"
+        }, 1000)
+
+      })
+
+    })
+  </script>
+</body>
+
+</html>

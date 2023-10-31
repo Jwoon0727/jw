@@ -1,0 +1,13 @@
+◎ web4 day13 보강 공지
+
+◎ 보강내용
+     탭메뉴1 : 기초 
+     탭메뉴2 : 심화 (변수 활용)
+
+◎ 복습내용
+     gallery4 반응형 slide CSS (빨강, 파랑, 초록)
+     accordion html, CSS (Drop-menu)
+
+3주차과제 
+필수과제: animation
+자율과제: sidebar

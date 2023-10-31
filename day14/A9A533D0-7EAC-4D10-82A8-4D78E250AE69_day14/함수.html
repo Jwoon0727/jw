@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin: 50px;
+    }
+
+    .btn {
+      width: 80px;
+      height: 50px;
+      margin-left: 110px;
+    }
+  </style>
+</head>
+<!-- 
+    ㅇ 함수 (function)
+      작성한 함수식(S+V)을 실행하는 기계, programming
+      script를 위에서 밑으로 parsing하며 순차적으로 함수식을 실행
+
+      1. 동작에 의한 함수 (event)
+
+      2. 명령에 의한 함수 (js, 실무)
+        1) 함수 선언
+          ex) function slide () { S.V ..}
+          => slide라는 이름을 가진 함수(기계)를 만들어라!
+
+        2) 함수 호출
+          ex) slide();
+          => 선언된 slide함수(기계)를 실행하여라!          
+
+ -->
+
+<body>
+  <div class="box box1">target1</div>
+  <button class="btn btn1">Action</button>
+
+  <div class="box box2">target2</div>
+  <button class="btn btn2">Action</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+
+      /* 1. 동작에 의한 함수 */
+      // .btn1을 클릭하면 
+      // .box1의 배경색을 파랑으로 변경
+
+      $(".btn1").click(function () {
+        $(".box1").css({ background: "salmon" })
+      })
+
+      $(".btn1").click()
+
+      /* ------------------------------------------ */
+      /* 2. 명령에 의한 함수 */
+      // 1) action함수 선언     
+
+      function action() {
+        $(".box2").css({ background: "cadetblue" }).animate({ marginLeft: 300 }, 2000).text("Action Start!");
+
+        // $(".box2").css({ background: "cadetblue" });
+        // $(".box2").animate({ marginLeft: 300 }, 2000);
+        // $(".box2").text("Action Start!");
+      }
+
+      $(".btn2").click(function () {
+        // 2) action함수 호출   
+        action();
+      })
+
+      // action();
+
+
+    })
+
+  </script>
+
+</body>
+
+</html>

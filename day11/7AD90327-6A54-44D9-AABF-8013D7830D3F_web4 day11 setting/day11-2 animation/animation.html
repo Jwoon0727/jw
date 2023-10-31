@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    /* make an animation here! */
+    /* 
+      ㅇ ani 성립 조건
+      1. 0% style과 100% style이 다를 것
+      2. ani 재생시간이 0s가 아닐 것
+    */
+
+    @keyframes right {
+      0% {
+        margin-left: 50px;
+      }
+      100% {
+        margin-left: 500px;
+        background: red;
+        opacity: 0.1;
+      }
+    }
+
+    @keyframes spin {
+      from{
+        transform: rotate(0deg);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: salmon;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 30px;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      margin: 50px;
+    }
+
+    .box1.active {
+
+      animation: right 2s infinite alternate;
+
+
+
+
+      /*animation-name: right; 
+      animation-duration: 2s; 
+      animation-iteration-count: infinite; 
+      animation-direction: alternate;
+
+      animation-fill-mode: forwards; 
+      animation-timing-function: linear; */
+    }
+
+    .box2 {
+      background-color: cadetblue;
+    }
+
+    .box3 {
+      background-color: steelblue;
+    }
+
+    .box.active{
+      animation: spin 0.5s infinite linear;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1">CSS animation</div>
+  <div class="box box2">JQ animate</div>
+  <div class="box box3">SPIN</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $(".box1").click(function(){
+        $(this).addClass("active")
+      })
+      $(".box2").click(function(){
+        $(this).animate({
+          width : 1000,
+          fontSize : 50
+        }, 2000, function(){
+          $(this).animate({
+            marginTop:300
+          }, 1000)
+        })
+      })
+      $(".box3").mousedown(function(){
+        $(this).addClass("active")
+      })
+      $(".box3").mouseup(function(){
+        $(this).removeClass("active")
+      })
+
+
+
+    })
+
+
+  </script>
+</body>
+
+</html>

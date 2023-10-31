@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hamburger과제</title>
+
+  <script src="../day02/js/jquery-3.7.1.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* 빵 */
+
+    .top {
+      width: 500px;
+      height: 100px;
+      margin: 50px auto;
+    }
+
+    .top li {
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+
+    .top li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 100px;
+      text-align: center;
+      background-color: burlywood;
+      border: 1px solid #333;
+    }
+
+    .bottom {
+      width: 500px;
+      height: 100px;
+      margin: 50px auto;
+    }
+
+    .bottom li {
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+
+    .bottom li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 100px;
+      text-align: center;
+      background-color: burlywood;
+      border: 1px solid #333;
+    }
+
+    /* 속재료 */
+
+    .center {
+      width: 500px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .center li {
+      width: 100%;
+      height: 40px;
+    }
+
+    .center li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid #000;
+    }
+
+    .top li :nth-child(2) a {
+      background-color: red;
+    } 
+  </style>
+</head>
+
+<body>
+  <ul class="top">
+    <li><a href="#">list1</a></li>
+    <li><a href="#">list2</a></li>
+    <li><a href="#">list3</a></li>
+    <li><a href="#">list4</a></li>
+    <li><a href="#">list5</a></li>
+  </ul>
+  <ul class="center">
+    <li><a href="#">list1</a></li>
+    <li><a href="#">list2</a></li>
+    <li><a href="#">list3</a></li>
+    <li><a href="#">list4</a></li>
+    <li><a href="#">list5</a></li>
+  </ul>
+  <ul class="bottom">
+    <li><a href="#">list1</a></li>
+    <li><a href="#">list2</a></li>
+    <li><a href="#">list3</a></li>
+    <li><a href="#">list4</a></li>
+    <li><a href="#">list5</a></li>
+  </ul>
+
+  
+  <script>
+    $(document).ready(function() {
+      /* 
+        ㅇ jquery selector1 (순서 탐색 메서드)
+          웹페이지에 존재하는 모든 html요소를
+          선택자(타겟)으로 가져올 수 있도록 한다
+    */
+    $(".top li:nth-child(1) a").css("border-radius", "50px 0 0 0")
+    $(".top li:nth-child(5) a").css("border-radius", "0 50px 0 0")
+    $(".bottom li:nth-child(1) a").css("border-radius", "0 0 0 50px")
+    $(".bottom li:nth-child(5) a").css("border-radius", "0 0 50px 0")
+    
+    
+    $(".center li:nth-child(1) a").css("background-color", "yellow")
+    $(".center li:nth-child(2) a").css("background-color", "green")
+    $(".center li:nth-child(3) a").css("background-color", "brown")
+    $(".center li:nth-child(4) a").css("background-color", "pink")
+    $(".center li:nth-child(5) a").css("background-color", "brown")
+
+    })
+  </script>
+</body>
+
+
+
+
+</html>

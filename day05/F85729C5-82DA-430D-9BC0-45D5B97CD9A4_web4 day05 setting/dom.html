@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+      color: cornflowerblue;
+    }
+
+    p span {
+      text-decoration: underline;
+    }
+
+    .menu {
+      display: flex;
+      width: 800px;
+      height: 40px;
+      margin: 20px auto;
+      background-color: beige;
+    }
+
+    .menu li {
+      
+
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    .list {
+      width: 800px;
+      height: 40px;
+      margin: 20px auto;
+      background-color: beige;
+      display: flex;
+    }
+
+    .list li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    /* reset end */
+  </style>
+
+</head>
+<!-- 
+    ㅇ DOM (Document Object Model) - 문서 객체 모델
+      Javascript는 웹 문서의 html을 제어하기 위해 만들어짐
+
+      하지만 제어하기 위해서는, Javascript가 html에 접근할 수 있도록
+      html요소 하나하나를 대상화, 객체화 할 필요가 있다.
+
+      "무엇을?" : 대상(타겟), 객체(web5)  <---
+      "어떻게할래?" : control(메서드)
+   -->
+
+<body>
+  <h1>DOM (Document Object Model)</h1>
+  <p>JS가 <span>html을 제어</span>할 수 있도록 객체화 한 요소를 뜻합니다</p>
+
+  <ul class="menu">
+    <li><a href="#">menu1</a></li>
+    <li><a href="#">menu2</a></li>
+    <li><a href="#">menu3</a></li>
+    <li><a href="#">menu4</a></li>
+    <li><a href="#">menu5</a></li>
+  </ul>
+
+  <ul class="list">
+    <li><a href="#">list1</a></li>
+    <li><a href="#">list2</a></li>
+    <li><a href="#">list3</a></li>
+    <li><a href="#">list4</a></li>
+    <li><a href="#">list5</a></li>
+  </ul>
+
+<script src="../F85729C5-82DA-430D-9BC0-45D5B97CD9A4_web4 day05 setting/js/jquery-3.7.1.min.js"></script>
+<script src="../F85729C5-82DA-430D-9BC0-45D5B97CD9A4_web4 day05 setting/bom.js"></script>
+</body>
+
+</html>

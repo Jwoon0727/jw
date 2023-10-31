@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method2</title>
+  <style>
+    img {
+      
+      display: block;
+      margin: 50px auto;
+    }
+
+    .box1 {
+      /* border: 1px solid red; */
+     margin: 0 auto;
+     display: flex;
+     justify-content: center; 
+     gap: 20px;
+    }
+
+    hr {
+      margin: 50px auto;
+      display: block;
+      border: 5px inset steelblue;
+      box-shadow: #333 3px 3px 5px;
+    }
+
+    .box2 {
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+  </style>
+</head>
+<!-- 
+    ㅇ 메서드 (Method)
+    "무엇을?"
+    "어떻게 할래?"" : 메서드(method), 동사, 명령어
+
+    1. CSS관련
+      1) css()
+      2) width() / height() <--
+
+    2. 속성, 값 관련
+  
+
+    3. class관련***
+
+    4. 애니메이션 관련
+
+    5. scroll관련
+  
+    6. 텍스트, 구조 관련 (dom)
+ -->
+
+<body>
+  <img width="300px" src="../71C187BE-2886-4E55-A7E4-28B938E5E877_web4 day10 setting/images/food.jpg" alt="음식">
+  <div class="box1">
+    <button class="btn1">강아지</button>
+    <button class="btn2">고양이</button>
+    <button class="btn0">음식</button>
+  </div>
+
+  <hr>
+
+  <div class="box2">
+    <input id="input1" type="text" placeholder="오늘은 무슨 요일입니까?">
+    <button class="btn3">정답</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    /* ㅇ attr() */
+    /* 
+      1. $("선택자").attr("속성이름")
+      : 선택자(타겟)의 속성을 get
+
+      2. $("선택자").attr("속성이름", "변경할속성값")
+      : 선택자(타겟)의 속성을 변경
+    */
+
+    $(document).ready(function () {
+
+      /* coding start! 1번 문법 */
+      //1번
+      //consol.log($("img").attr("src"))
+
+      //2번
+      //var im = $("img").attr("src")
+      //console.log(im);
+
+      // attr ver1
+      $(".btn1").click(function () {
+        $("img").attr("src","images/img01.jpg")
+
+      
+      })
+
+      $(".btn2").click(function () {
+        $("img").attr( "src","../71C187BE-2886-4E55-A7E4-28B938E5E877_web4 day10 setting/images/img02.jpg")
+      })
+
+      $(".btn0").click(function () {
+        $("img").attr( "src","images/food.jpg")
+      })
+
+      //attr ver2
+      $(".btn2").click(function () {
+        $("img").attr({
+          src :"../71C187BE-2886-4E55-A7E4-28B938E5E877_web4 day10 setting/images/img02.jpg",
+          alt: "고양이",
+          width: "200px"
+        })
+      })
+
+
+      //================================================
+      /* ㅇ val() */
+
+    // value(form의 문자) vs text(문서 문자)
+    // 텍스트뷰어(메모장, 아래한글, word 등)로 열람 가능? => text
+    // 텍스트뷰어(메모장, 아래한글, word 등)로 열람 불가능? => value
+
+    /* 
+      1. $("선택자").val()
+      : 선택자(타겟)의 값을 get
+
+      2. $("선택자").val(something)
+      : 선택자(타겟)의 값을 something으로 변경
+    */
+
+    /* 1번 문법 get */
+      // 정답 버튼(btn3)을 누르면,
+      // input의 속성값(내용) 취득해서 console에 기록
+
+      $(".btn3").click(function(){
+
+       var id = $("#input1").val()
+       consol.log(id)
+
+      })
+
+      $(".btn3").click(function(){
+
+        $("#input").val("화요알")
+      })
+
+
+    })
+
+  </script>
+
+</body>
+
+</html>
