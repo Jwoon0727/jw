@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gnb1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .gnb {
+      /* border: 1px solid red; */
+      width: 800px;
+      /* height: auto; */
+      text-align: center;
+      display: flex;
+      
+
+      position: absolute;
+      top: 50px;
+      right: 50px;
+    }
+
+    .gnb>li>a {
+      display: block;
+      background: bisque;
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .gnb>li>a:hover {
+      background: brown;
+      color: #fff;
+    }
+
+    .sub {
+      display: none; 
+    }
+
+    .sub a {
+      display: block;
+      background: ivory;
+      height: 40px;
+      line-height: 40px;
+      /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    }
+
+    .sub a:hover {
+      background: brown;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="gnb">
+
+    <li>
+      <a href="#">MENU-1</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU1 end -->
+    <li>
+      <a href="#">MENU-2</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU2 end -->
+    <li>
+      <a href="#">MENU-3</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU3 end -->
+    <li>
+      <a href="#">MENU-4</a>
+      <ul class="sub">
+        <li><a href="#">sub-1</a></li>
+        <li><a href="#">sub-2</a></li>
+        <li><a href="#">sub-3</a></li>
+        <li><a href="#">sub-4</a></li>
+      </ul>
+    </li>
+    <!-- MENU4 end -->
+
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      /* gnb3 */
+      /* 1) 대메뉴(.lnb>li>a)에 mouseenter/mouseleave */
+      //$(".gnb > li > a").mouseenter(function () {
+        //$(this).next().slideDown()
+      //})
+
+      //$(".gnb > li > a").mouseleave(function () {
+       // $(this).next().slideUp()
+      //})
+
+      //2). 대메뉴와 서브를 포함한 영역에 
+        $("gnb > li ").mouseenter(function(){
+
+          $(this).find(".sub").stop().slideDown()
+        })
+
+        $("gnb > li ").mouseleave(function(){
+
+          $(this).find(".sub").stop().slideUp()
+        })
+
+
+    })
+
+  </script>
+
+</body>
+
+</html>

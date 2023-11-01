@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation-fill-mode</title>
+  <style>
+    @keyframes right {
+      0% {
+        transform: translateX(0);
+        opacity: 0.5
+      }
+
+      100% {
+        transform: translateX(300px);
+        opacity: 1;
+      }
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: salmon;
+      margin: 30px;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .box1 {
+      animation: right 3s;
+    }
+
+    .box2 {
+      background: cadetblue;
+      animation: right 3s;
+    }
+
+    .box3 {
+      background: steelblue;
+      animation: right 3s;
+    }
+  </style>
+</head>
+<!-- 
+        delay          ----------------------
+   확장(backwards) <-  0%                  100%   -> 확장(forwards)
+         뒤로        ani시작              ani종료        앞으로
+
+
+  ㅇ animation-fill-mode : animation 시작전, 종료후의 style지정
+
+    animation을 채운다.
+    0% ~ 100%만 ani로 채워져있지만,
+    ani시작 전, 뒷방향으로 ani를 채운다 (backwards)
+    ani종료 후, 앞방향으로 ani를 채운다 (forwards)
+
+    1. forwards : animation 종료 후 100% style유지
+    2. backwards : animation 시작 전(delay) 0% style유지
+    3. both : forwards + backwards          
+ -->
+
+<body>
+  <div class="box box1">forwards</div>
+  <div class="box box2">backwards</div>
+  <div class="box box3">both</div>
+</body>
+
+</html>

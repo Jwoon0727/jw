@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>method7</title>
+  <style>
+    body {
+      width: 5000px;
+      height: 5000px;
+    }
+
+    .p1 {
+      font-size: 100px;
+      position: fixed;
+      top: 0;
+      left: 10%;
+    }
+
+    .p2 {
+      font-size: 100px;
+      position: fixed;
+      top: 20%;
+      left: 10%;
+    }
+  </style>
+</head>
+<!-- 
+  ㅇ 메서드 (Method)
+
+    '언제?' : 이벤트(event)
+    '무엇을?' : $("선택자")
+    '어떻게 할래?' : 메서드(method)   <----------
+
+    1. CSS 관련
+      1) css();
+      2) width() / height();    
+
+    2. 속성, 값 관련
+      1) attr();
+      2) val();
+
+    3. Class 관련
+      1) addClass();
+      2) removeClass();
+      3) toggleClass();
+      4) hasClass();
+      
+    4. 애니메이션 관련    
+      1) show() / hide(); / toggle();
+      2) fadeIn() / fadeOut() / fadeToggle();
+      3) slideDown() / slideUp() / slideToggle();
+      4) stop(); 
+      5) delay();
+      6) animate(); 
+
+    5. index(), length  
+
+    6. Scroll 관련   <----------
+      1) scrollTop();
+      2) scrollLeft();
+      3) offset()
+
+    6. 텍스트, 구조 관련 (day04 dom)
+
+    ※ jQuery method는 이 것이 전부가 아닙니다.
+       19일이라는 짧은 web4 과정은,
+       jQuery, 나아가서 JS를 독학할 수 있게 하는 훈련입니다.
+
+       프로젝트에서 필요한 기능이 있으면,
+       그 것을 해결할 수 있는 method를 검색하여 적용하는 것
+       jQ, jS 작동원리만 이해하면 충분히 가능한 일입니다.    
+ -->
+
+<body>
+  <p class="p1">세로</p>
+  <br>
+  <p class="p2">가로</p>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    /* ㅇ scrollTop() / scrollLeft() */
+
+    /* $(window).scrollTop() : window상단으로부터 스크롤된 거리값 get */
+    /* $(window).scrollLeft() : window좌측으로부터 스크롤된 거리값 get */
+
+
+  </script>
+</body>
+
+</html>
