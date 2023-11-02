@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/parallax.css">
+</head>
+
+<body>
+
+  <div id="wrap">
+
+    <!-- header -->
+    <header>
+      <h2>Parallax : 시차를 이용한 효과</h2>
+    </header>
+
+    <!-- section1 -->
+    <section id="section1">
+      <!-- container -->
+      <div class="section1_wrap">
+        <!-- content1, parallax target1 -->
+        <div class="section1_img1">
+          <img src="./images/img01.jpg" alt="s1_img1">
+        </div>
+        <!-- content2, parallax target2 -->
+        <div class="section1_text1">
+          <h3>Spring</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis maiores repellat animi dolorem neque
+            dignissimos reiciendis, recusandae ex rerum expedita eos pariatur cum ratione veniam deleniti itaque,
+            delectus consectetur dolore!</p>
+        </div>
+        <!-- content3, parallax target3 -->
+        <div class="section1_img2">
+          <img src="./images/img02.jpg" alt="s1_img2">
+        </div>
+        <!-- content4, parallax target4 -->
+        <div class="section1_text2">
+          <h3>Summer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+            veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+            quo corporis blanditiis rem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section2 -->
+    <section id="section2">
+      <!-- container -->
+      <div class="section2_wrap">
+        <!-- content1, parallax target5 -->
+        <div class="section2_left">
+          <div class="section2_img1">
+            <img src="./images/img03.jpg" alt="s2_img1">
+          </div>
+          <div class="section2_text1">
+            <h3>Fall</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+              veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+              quo corporis blanditiis rem.</p>
+          </div>
+        </div>
+        <!-- content2, parallax target6 -->
+        <div class="section2_right">
+          <div class="section2_img2">
+            <img src="./images/img04.jpg" alt="s1_img4">
+          </div>
+          <div class="section2_text2">
+            <h3>Winter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+              veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+              quo corporis blanditiis rem.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      $(window).scroll(function () {
+
+        $(".section1_wrap > div, .section2_wrap > div").each(function () {
+          let win_top = $(window).scrollTop()
+          let paral_ot = $(this).offset().top
+
+          if (win_top >= paral_ot - 500) {
+            $(this).addClass("active")
+          }
+        })
+
+      })
+
+
+    })
+
+  </script>
+</body>
+
+</html>

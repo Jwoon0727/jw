@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 빨강 / 풀페이지 창틀 */
+#wrap {
+  border: 3px solid red;
+  height: 100%;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 50px;
+  z-index: 100;
+  transition: 0.5s all;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.gnb {
+  /* border: 1px solid blue; */
+  width: 60%;
+  min-width: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.gnb li {
+  /* border: 1px solid green; */
+  width: 25%;
+  height: 100%;
+}
+
+.gnb a {
+  display: block;
+  /* background: orange; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnb a:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.section1 {
+  background: #eee;
+}
+
+.section1 .fp-tableCell {
+  border: 5px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1_wrap {
+  border: 5px solid orange;
+  width: 90%;
+  height: 90%;
+
+  position: relative;
+}
+
+.visual {
+  border: 3px solid green;
+  width: 70%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.adv {
+  border: 3px solid green;
+  width: 80%;
+  height: 45%;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.section2 {
+  background: #ddd;
+}
+
+.section3 {
+  background: #ccc;
+}
+
+.section4 {
+  background: #bbb;
+}
+
+#fp-nav {
+  /* border: 1px solid red; */
+  margin-top: 0 !important;
+  top: 100px !important;
+  right: 50px !important;
+  width: 300px;
+}
+
+#fp-nav ul {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer {
+  background: gray;
+  /* height: 400px; */
+  /* height: auto; */
+}
+
+.footer_wrap {
+  border: 10px solid blue;
+  height: 400px;
+}

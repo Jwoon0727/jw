@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .anchor_demo {
+      width: 300px;
+      height: 300px;
+      background: salmon;
+      font-size: 30px;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      z-index: 100;
+    }
+  </style>
+</head>
+<!-- 
+  ㅇ AOS (Animate On Scroll, JavaScript 라이브러리)
+    library?
+    선배개발자분들이 후배개발자들을 위해서
+    미리 작업해둔 HTML, CSS, JS등 소스를 작성해 둔 공간
+    라이브러리에서 외부플러그인을 다운 또는 연동만 하면,
+    사용자는 정해진 명령어만 호출하면 쉽게 사용할 수 있다
+
+  ㅇ AOS 사용방법
+    1. css, js cdn* or download 연결
+    2. AOS 시동
+    3. setting값 html에 지정
+
+      1) data-aos="주고 싶은 효과 이름"
+      2) data-aos-delay="ani 지연시간"
+      3) data-aos-duration="ani 재생시간"
+      4) data-aos-easing="easing값, 시간에 따른 속도의 변화"
+
+      ----------------------------------------------------
+      ㅇ ani 발동시기 cotnrol
+
+      5) data-aos-offset="더 스크롤할 거리값(px)"
+      ex) offset="300" 
+      => 원래 발동 위치에서 300px만큼 더 스크롤해야 효과 발동
+      => 더 스크롤해야 ani가 실행되므로 기본값보다 더 늦게 실행
+
+      6) data-aos-anchor="#id"
+        id를 가진 target에 anchor를 설정하여,
+        target이 viewport에 일정 부분 나타나면 ani실행
+
+      7) data-aos-anchor-placement="target-vieport"
+        target의 위치와 만나면 vieport의 위치가 만나면 ani실행
+
+        target(layout에 따라 위치 변동)
+        viewport(시야에 따라 위치 고정)
+
+      ex) data-aos-anchor-placement="center-bottom" (기본값)
+        target의 center지점이 viewport의 bottom과 만나면 ani실행
+
+      8) data-aos-once="true" / "false" false기본값
+        ani한번만 실행
+ -->
+
+<body>
+
+  <div data-aos="fade-up" data-aos-anchor="#section2" class="anchor_demo">
+    Anchor Start!
+  </div>
+
+  <div id="wrap">
+
+    <!-- header -->
+    <header>
+      <h2>AOS: Animate On Scroll</h2>
+    </header>
+
+    <!-- section1 -->
+    <section id="section1">
+      <!-- container -->
+      <div class="section1_wrap">
+        <!-- content1, parallax target1 -->
+        <div data-aos="fade-up" data-aos-once="true" data-aos-offset="500" data-aos-duration="1000"
+          class="section1_img1">
+          <img src="./images/img01.jpg" alt="s1_img1">
+        </div>
+        <!-- content2, parallax target2 -->
+        <div data-aos="fade-left" class="section1_text1">
+          <h3>Spring</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis maiores repellat animi dolorem neque
+            dignissimos reiciendis, recusandae ex rerum expedita eos pariatur cum ratione veniam deleniti itaque,
+            delectus consectetur dolore!</p>
+        </div>
+        <!-- content3, parallax target3 -->
+        <div data-aos="flip-left" data-aos-anchor-placement="center-center" class="section1_img2">
+          <img src="./images/img02.jpg" alt="s1_img2">
+        </div>
+        <!-- content4, parallax target4 -->
+        <div data-aos="zoom-in" class="section1_text2">
+          <h3>Summer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+            veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+            quo corporis blanditiis rem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section2 -->
+    <section id="section2">
+      <!-- container -->
+      <div class="section2_wrap">
+        <!-- content1, parallax target5 -->
+        <div data-aos="zoom-in-right" class="section2_left">
+          <div class="section2_img1">
+            <img src="./images/img03.jpg" alt="s2_img1">
+          </div>
+          <div class="section2_text1">
+            <h3>Fall</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+              veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+              quo corporis blanditiis rem.</p>
+          </div>
+        </div>
+        <!-- content2, parallax target6 -->
+        <div data-aos="zoom-in-left" data-aos-delay="500" class="section2_right">
+          <div class="section2_img2">
+            <img src="./images/img04.jpg" alt="s1_img4">
+          </div>
+          <div class="section2_text2">
+            <h3>Winter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima vel molestiae assumenda
+              veritatis placeat quibusdam tenetur quidem. Accusantium quas esse perspiciatis maxime magnam quos deserunt
+              quo corporis blanditiis rem.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

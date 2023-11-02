@@ -1,0 +1,42 @@
+<!-- 
+  ㅇ AOS (Animate On Scroll, JavaScript 라이브러리)
+    library?
+    선배개발자분들이 후배개발자들을 위해서
+    미리 작업해둔 HTML, CSS, JS등 소스를 작성해 둔 공간
+    라이브러리에서 외부플러그인을 다운 또는 연동만 하면,
+    사용자는 정해진 명령어만 호출하면 쉽게 사용할 수 있다
+
+  ㅇ AOS 사용방법
+    1. css, js cdn* or download 연결
+    2. AOS 시동
+    3. setting값 html에 지정
+
+      1) data-aos="주고 싶은 효과 이름"
+      2) data-aos-delay="ani 지연시간"
+      3) data-aos-duration="ani 재생시간"
+      4) data-aos-easing="easing값, 시간에 따른 속도의 변화"
+
+      ----------------------------------------------------
+      ㅇ ani 발동시기 cotnrol
+
+      5) data-aos-offset="더 스크롤할 거리값(px)"
+      ex) offset="300" 
+      => 원래 발동 위치에서 300px만큼 더 스크롤해야 효과 발동
+      => 더 스크롤해야 ani가 실행되므로 기본값보다 더 늦게 실행
+
+      6) data-aos-anchor="#id"
+        id를 가진 target에 anchor를 설정하여,
+        target이 viewport에 일정 부분 나타나면 ani실행
+
+      6) data-aos-anchor-placement="target-vieport"
+        target의 위치와 만나면 vieport의 위치가 만나면 ani실행
+
+        target(layout에 따라 위치 변동)
+        viewport(시야에 따라 위치 고정)
+
+      ex) data-aos-anchor-placement="center-bottom" (기본값)
+        target의 center지점이 viewport의 bottom과 만나면 ani실행
+
+      7) data-aos-once="true / false" false기본값
+        ani한번만 실행
+ -->

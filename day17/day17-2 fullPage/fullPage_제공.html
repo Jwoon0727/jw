@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fullPage</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery.fullPage.css">
+</head>
+<!-- 
+  ㅇ fullPage.js (jQuery + javaScript 라이브러리)
+    풀페이지형 웹페이지 효과를 손쉽게 사용가능한 라이브러리
+    jQuery와 javaScript 둘 다 지원하며,
+    기본적으로는 유료라이센스를 구입해야하지만,(v3 이상)
+    v3이전 버젼 (v2.9.7)은 무료로 사용가능하다.
+
+  ㅇ fullPage.js 사용방법
+    1. css, js download 연결
+    2. 정해진 틀(frame)을 갖추면 시동
+    3. method안에 setting값 조절
+ -->
+
+<body>
+  <!-- 빨강 / 창틀 -->
+  <div id="wrap">
+
+    <header>
+      <ul class="gnb">
+        <li data-menuanchor="1rdPage">
+          <a href="#1rdPage">section1</a>
+        </li>
+        <li data-menuanchor="2rdPage">
+          <a href="#2rdPage">section2</a>
+        </li>
+        <li data-menuanchor="3rdPage">
+          <a href="#3rdPage">section3</a>
+        </li data-menuanchor="4rdPage">
+        <li>
+          <a href="#4rdPage">section4</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- 파랑 / 띠 -->
+    <main id="fullpage">
+      <!-- 초록 / 섹션 -->
+      <section class="section section1">
+        <div class="section1_wrap">
+          <div class="visual">visual area</div>
+          <div class="adv">advertise area</div>
+        </div>
+      </section>
+
+      <section class="section section2">section2</section>
+      <section class="section section3">section3</section>
+      <section class="section section4">section4</section>
+      <section class="section footer fp-auto-height">
+        <div class="footer_wrap">footer</div>
+      </section>
+    </main>
+
+    <!-- <footer>footer</footer> -->
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script src="js/jquery.fullPage.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+
+      /* 1. navigation위치 조절 */
+      /* 2. footer생성 */
+      /* 3. gnb와 section 연결 */
+
+      /* 4. section layout연습 */
+      /* 5. afterload event */
+
+      /* id fullpage를 fullpage형식으로 만들어라 */
+      $("#fullpage").fullpage({
+        navigation: true,
+        anchors: ['1rdPage', '2rdPage', '3rdPage', '4rdPage'],
+      });
+
+    })
+
+  </script>
+
+
+</body>
+
+</html>

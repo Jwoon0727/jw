@@ -1,0 +1,5 @@
+fullpage js 2.9.7 버전: 
+https://github.com/alvarotrigo/fullPage.js/releases/tag/2.9.7
+
+fullpage js 설명서: 
+https://github.com/alvarotrigo/fullPage.js/tree/master/lang/korean#fullpagejs

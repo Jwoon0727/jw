@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* 
+  1. 패럴렉스 ani생성
+  2. 패럴렉스의 타겟을 보이지 않게 처리
+     패럴렉스의 타겟.acitve를 보이게 처리 + ani적용
+*/
+
+/* 패럴렉스 ani1 생성 */
+@keyframes up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* .section1_img1,
+.section1_text1,
+.section1_img2,
+.section1_text2 */
+.section1_wrap > div {
+  opacity: 0;
+}
+
+.section1_wrap > div.active {
+  animation: up 1s;
+  opacity: 1;
+}
+
+/* 패럴렉스 ani2 생성 */
+@keyframes right {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.section2_wrap > div {
+  opacity: 0;
+}
+
+.section2_wrap > div.active {
+  animation: right 1s;
+  opacity: 1;
+}
+
+.section2_wrap > div:nth-child(2).active {
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+    /* delay시간에는 ani가 실행되지 않지만,
+   ani시작 전에도 right ani의 0% 속성을 확장 */
+}
